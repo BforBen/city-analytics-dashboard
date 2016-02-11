@@ -11,7 +11,7 @@ window.dataHelper = {
   },
   deviceType: function(device) {
     device = device.toLowerCase();
-    if(device === "tablet") { device = "mobile"; }
+    //if(device === "tablet") { device = "mobile"; }
     return device;
   }
 }
