@@ -35,6 +35,8 @@
       .mobile { background: #B26E00; color: #fff; }
       .desktop { background: #265c8d; color: #fff; }
       .visitor-count { text-align: center; padding-bottom: 1em; }
+      .visitor-types { padding: 0 0.5em; margin-top: 1em; }
+      .list-contents { padding-left: 0; }
     </style>
 </head>
 <body>
@@ -145,7 +147,7 @@
   {{#pages}}
     <li class="list-group-item">
       <h4 class="list-group-item-heading">
-        <a href="http://{{ matrix.settings.domain }}/{{ url }}" target="_blank">{{ title }}</a>
+        <a href="http://www.guildford.gov.uk{{ url }}" target="_blank">{{ title }}</a>
       </h4>
       <p class="list-group-item-text">
         <span class="visitor-types mobile">
@@ -163,18 +165,18 @@
   {{#pages}}
   <li class="list-group-item">
     <div class="device-type {{deviceCategory}}"></div>
-    <div class="link">
-      <a href="http://" + matrix.settings.domain + "/{{ url }}" target="_blank">{{ term }}</a>
-    </div>
+    <h4 class="list-group-item-heading">
+      <a href="http://www.guildford.gov.uk{{ url }}" target="_blank">{{ term }}</a>
+    </h4>
   </li>
   {{/pages}}
 </script>
 <script type="template" id="search-result-item">
   <li class="list-group-item">
     <div class="device-type {{deviceCategory}}"></div>
-    <div>
-      <a href="http://" + matrix.settings.domain + "/{{ url }}" target="_blank">{{ term }}</a>
-    </div>
+    <h4 class="list-group-item-heading">
+      <a href="http://www.guildford.gov.uk{{ url }}" target="_blank">{{ term }}</a>
+    </h4>
   </li>
 </script>
 
@@ -182,14 +184,14 @@
   {{#each pages}}
   <li class="list-group-item">
     <div class="device-type {{deviceCategory}}"></div>
-    <div class="link">
-      {{#has_url}}<a href="http://" + matrix.settings.domain + "/{{ url }}" target="_blank">{{/has_url}}
+    <h4 class="list-group-item-heading">
+      {{#has_url}}<a href="http://www.guildford.gov.uk{{ url }}" target="_blank">{{/has_url}}
       {{ term }}
       {{#has_url}}</a>{{/has_url}}
-      {{#has_source}}
-        <em>via: {{ source }}</em>
-      {{/has_source}}
-    </div>
+    </h4>
+    {{#has_source}}
+    <p class="list-group-item-text text-muted small">via: {{ source }}</p>
+    {{/has_source}}
   </li>
   {{/each}}
 </script>
