@@ -1,166 +1,193 @@
-<!doctype html>
-  <head>
-    <title>Data Screen</title>
-    <link rel="stylesheet" href="./stylesheets/base.css" />
-    <link rel="stylesheet" href="./stylesheets/font-awesome/css/font-awesome.min.css">
-    <!--[if IE 7]>
-      <link rel="stylesheet" href="./stylesheets/font-awesome/css/font-awesome-ie7.min.css">
-    <![endif]-->
-    <link href='//fonts.googleapis.com/css?family=Bitter:400,700,400italic' rel='stylesheet' type='text/css' />
-    <meta name="viewport"
-     content="width=device-width, minimum-scale=1.0,initial-scale=1.0, user-scalable=yes" />
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  </head>
-  <body>
-    <div class="top-bar">
-      <div class="inner">
-        <img src="//style.codeforamerica.org/media/images/logo-colored.png" alt="Code for America">
-      </div>
-      <p>This is an experiment from Code for America. You can log issues and find out more from our <a href="https://github.com/codeforamerica/display-screen">GitHub repository</a>. You must use <a href="https://www.google.com/intl/en_us/chrome/browser/">Chrome</a> to view this dashboard.</p>
-        <div style="width:75%;overflow:hidden" class="small-box traffic">
-          <div class="graph box-in">
-            <div id="traffic-count-graph" class="box-inner">
-            </div>
-            <div id="graph-text">visitors over the last 48 hours (30 minute interval)</div>
-          </div>
-          <span id="traffic" class="count">
-            <div class="visitor-count" id="mobile-count">
-              <span class="text-feature" id="traffic-count-mobile">&nbsp;</span>
-              <i class="icon-mobile-phone"></i>
-              mobile
-            </div>
-            <div class="visitor-count" id="desktop-count">
-              <span class="text-feature" id="traffic-count">&nbsp;</span>
-              <i class="icon-desktop"></i>
-              desktop
-            </div>
-            <span>visitors online</span>
-          </span>
+<!DOCTYPE html>
+<html lang="en" ng-app="" class="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GUILDFORD.GOV.UK Realtime Analytics</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+    <link href="//cdn.guildford.gov.uk/assets/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="//cdn.guildford.gov.uk/assets/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="//cdn.guildford.gov.uk/assets/favicon-16x16.png" sizes="16x16">
+    <link rel="shortcut icon" href="http://cdn.guildford.gov.uk/assets/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileImage" content="//cdn.guildford.gov.uk/assets/mstile-144x144.png">
+    <meta name="msapplication-config" content="//cdn.guildford.gov.uk/assets/browserconfig.xml">
+    <meta name="theme-color" content="#009688">
+    <meta name="robots" content="noindex,follow">
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<header role="banner" class="navbar navbar-gbc">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <span class="navbar-brand">
+                Guildford Borough Council
+            </span>
         </div>
-
     </div>
+</header>
 
-    <ul class="bricks">
-      <li class="brick">
-        <h2 class="brick-heading">Live search</h2>
-        <div class="box search-terms">
-          <div class="box-inner">
-            <ul id="search-terms"></ul>
-          </div>
+<div class="container-fluid" id="content">
+    <div class="row">
+        <div class="col-xs-8 col-xs-2">
+            <div class="small-box traffic">
+                <div class="graph box-in">
+                  <div id="traffic-count-graph" class="box-inner">
+                  </div>
+                  <div id="graph-text">visitors over the last 48 hours (30 minute interval)</div>
+                </div>
+                <span id="traffic" class="count">
+                  <div class="visitor-count" id="mobile-count">
+                    <span class="text-feature" id="traffic-count-mobile">&nbsp;</span>
+                    <i class="icon-mobile-phone"></i>
+                    mobile
+                  </div>
+                  <div class="visitor-count" id="desktop-count">
+                    <span class="text-feature" id="traffic-count">&nbsp;</span>
+                    <i class="icon-desktop"></i>
+                    desktop
+                  </div>
+                  <span>visitors online</span>
+                </span>
+            </div>
         </div>
-      </li>
-
-      <li class="brick">
-        <h2 class="brick-heading">Active pages</h2>
-        <div class="box searches">
-          <div class="box-inner">
-            <ul id="search"></ul>
-          </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+            <h2 class="page-header">Live search</h2>
+            <div class="box search-terms">
+                <div class="box-inner">
+                    <ul id="search-terms"></ul>
+                </div>
+            </div>
         </div>
-      </li>
-
-      <li class="brick last">
-        <h2 class="brick-heading">Most popular pages</h2>
-        <div class="box popular content">
-          <div class="box-inner">
-            <ul id="content"></ul>
-          </div>
+        <div class="col-xs-4">
+            <h2 class="page-header">Active pages</h2>
+            <div class="box searches">
+                <div class="box-inner">
+                    <ul id="search"></ul>
+                </div>
+            </div>
         </div>
-      </li>
-    </ul>
-
-
-    <script src="javascripts/vendor/xhr.min.js"></script>
-    <script src="javascripts/vendor/time.min.js"></script>
-    <script src="javascripts/vendor/timeFormat.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-    <script src="javascripts/vendor/handlebars-v3.0.3.js"></script>
-    <script src="javascripts/vendor/pretty.js"></script>
-    <script src="javascripts/vendor/bezier.js"></script>
-
-    <script src="javascripts/helpers/dataHelper.js"></script>
-    <script src="javascripts/helpers/templateHelper.js"></script>
-    <script src="javascripts/helpers/helper.js"></script>
-    <script src="javascripts/helpers/raphaelHelper.js"></script>
-    <script src="javascripts/landing-pages.js"></script>
-    <script src="javascripts/search.js"></script>
-    <script src="javascripts/traffic.js"></script>
-    <script src="javascripts/content.js"></script>
-
-    <script src="javascripts/manager.js"></script>
-    <script>
-      if(typeof window.matrix === 'undefined'){ window.matrix = {}; }
-
-      matrix.settings = {
-        authServer: '/token',
-        profileId: $PROFILE_ID,
-        domain: $DOMAIN_URL,
-        titlefilter: ' ~ '
-      };
-
-      addEvent("load", window, matrix.manager.init);
-    </script>
-
-
-
-    <script type="template" id="select-options">
-      <option value="">Select {{object}}</option>
-      {{#options}}
-        <option value="{{id}}">{{name}}</option>
-      {{/options}}
-    </script>
-
-    <script type="template" id="content-results">
-      {{#pages}}
-        <li>
-          <a href="http://{{ url }}" target="_blank">{{ title }}</a>
-          <em>
-          <div class="visitor-types mobile">
-            <i class="icon mobile icon-mobile-phone"></i> {{ numberFormat visits.mobile }}
-          </div>
-          <div class="visitor-types desktop">
-            <i class="icon desktop icon-desktop"></i> {{ numberFormat visits.desktop }}
-          </div>
-          </em>
-        </li>
-      {{/pages}}
-    </script>
-
-    <script type="template" id="search-result-items">
-      {{#pages}}
-      <li>
-        <div class="device-type {{deviceCategory}}"></div>
-        <div class="link">
-          <a href="http://{{ url }}" target="_blank">{{ term }}</a>
+        <div class="col-xs-4">
+            <h2 class="page-header">Most popular pages</h2>
+            <div class="box popular content">
+                <div class="box-inner">
+                    <ul id="content"></ul>
+                </div>
+            </div>
         </div>
-      </li>
-      {{/pages}}
-    </script>
-    <script type="template" id="search-result-item">
-      <li>
-        <div class="device-type {{deviceCategory}}"></div>
-        <div>
-          <a href="http://{{ url }}" target="_blank">{{ term }}</a>
-        </div>
-      </li>
-    </script>
+    </div>
+</div>
 
-    <script type="template" id="landing-pages-items">
-      {{#each pages}}
-      <li>
-        <div class="device-type {{deviceCategory}}"></div>
-        <div class="link">
-          {{#has_url}}<a href="http://{{ url }}" target="_blank">{{/has_url}}
-          {{ term }}
-          {{#has_url}}</a>{{/has_url}}
-          {{#has_source}}
-            <em>via: {{ source }}</em>
-          {{/has_source}}
-        </div>
-      </li>
-      {{/each}}
-    </script>
-  </body>
+<script src="javascripts/vendor/xhr.min.js"></script>
+<script src="javascripts/vendor/time.min.js"></script>
+<script src="javascripts/vendor/timeFormat.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script src="javascripts/vendor/handlebars-v3.0.3.js"></script>
+<script src="javascripts/vendor/pretty.js"></script>
+<script src="javascripts/vendor/bezier.js"></script>
+
+<script src="javascripts/helpers/dataHelper.js"></script>
+<script src="javascripts/helpers/templateHelper.js"></script>
+<script src="javascripts/helpers/helper.js"></script>
+<script src="javascripts/helpers/raphaelHelper.js"></script>
+<script src="javascripts/landing-pages.js"></script>
+<script src="javascripts/search.js"></script>
+<script src="javascripts/traffic.js"></script>
+<script src="javascripts/content.js"></script>
+
+<script src="javascripts/manager.js"></script>
+
+<script>
+  if(typeof window.matrix === 'undefined'){ window.matrix = {}; }
+
+  matrix.settings = {
+    authServer: '/token',
+    profileId: $PROFILE_ID,
+    domain: $DOMAIN_URL,
+    titlefilter: ' ~ '
+  };
+
+  addEvent("load", window, matrix.manager.init);
+</script>
+
+
+
+<script type="template" id="select-options">
+  <option value="">Select {{object}}</option>
+  {{#options}}
+    <option value="{{id}}">{{name}}</option>
+  {{/options}}
+</script>
+
+<script type="template" id="content-results">
+  {{#pages}}
+    <li>
+      <a href="http://$DOMAIN_URL/{{ url }}" target="_blank">{{ title }}</a>
+      <em>
+      <div class="visitor-types mobile">
+        <i class="icon mobile icon-mobile-phone"></i> {{ numberFormat visits.mobile }}
+      </div>
+      <div class="visitor-types desktop">
+        <i class="icon desktop icon-desktop"></i> {{ numberFormat visits.desktop }}
+      </div>
+      </em>
+    </li>
+  {{/pages}}
+</script>
+
+<script type="template" id="search-result-items">
+  {{#pages}}
+  <li>
+    <div class="device-type {{deviceCategory}}"></div>
+    <div class="link">
+      <a href="http://$DOMAIN_URL/{{ url }}" target="_blank">{{ term }}</a>
+    </div>
+  </li>
+  {{/pages}}
+</script>
+<script type="template" id="search-result-item">
+  <li>
+    <div class="device-type {{deviceCategory}}"></div>
+    <div>
+      <a href="http://$DOMAIN_URL/{{ url }}" target="_blank">{{ term }}</a>
+    </div>
+  </li>
+</script>
+
+<script type="template" id="landing-pages-items">
+  {{#each pages}}
+  <li>
+    <div class="device-type {{deviceCategory}}"></div>
+    <div class="link">
+      {{#has_url}}<a href="http://$DOMAIN_URL/{{ url }}" target="_blank">{{/has_url}}
+      {{ term }}
+      {{#has_url}}</a>{{/has_url}}
+      {{#has_source}}
+        <em>via: {{ source }}</em>
+      {{/has_source}}
+    </div>
+  </li>
+  {{/each}}
+</script>
+</body>
 </html>
