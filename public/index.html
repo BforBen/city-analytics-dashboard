@@ -32,9 +32,9 @@
     <meta name="robots" content="noindex,follow">
     <style>
       .page-header { margin-top: 40px; }
-      #mobile-count { background: #B26E00; }
-      #desktop-count { background: #265c8d; }
-      .visitor-count { color: #fff; text-align: center; padding-bottom: 1em; }
+      .mobile { background: #B26E00; color: #fff; }
+      .desktop { background: #265c8d; color: #fff; }
+      .visitor-count { text-align: center; padding-bottom: 1em; }
     </style>
 </head>
 <body>
@@ -50,7 +50,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-9 col-xs-offset-1">
+        <div class="col-md-9 col-md-offset-1">
             <div class="small-box traffic">
                 <div class="graph box-in">
                   <div id="traffic-count-graph" class="box-inner"></div>
@@ -58,12 +58,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-1" id="traffic">
-            <div class="visitor-count" id="mobile-count">
+        <div class="col-md-1" id="traffic">
+            <div class="visitor-count mobile" id="mobile-count">
               <span class="lrg-number" id="traffic-count-mobile">&nbsp;</span>
               <div><span class="fa fa-mobile"></span> mobile</div>
             </div>
-            <div class="visitor-count" id="desktop-count">
+            <div class="visitor-count desktop" id="desktop-count">
               <span class="lrg-number" id="traffic-count">&nbsp;</span>
               <div><span class="fa fa-desktop"></span> desktop</div>
             </div>
@@ -71,7 +71,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-4">
+        <div class="col-md-4">
             <h2 class="page-header">Live search</h2>
             <div class="box search-terms">
                 <div class="box-inner">
@@ -79,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
             <h2 class="page-header">Active pages</h2>
             <div class="box searches">
                 <div class="box-inner">
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-4">
+        <div class="col-md-4">
             <h2 class="page-header">Most popular pages</h2>
             <div class="box popular content">
                 <div class="box-inner">
@@ -144,15 +144,17 @@
 <script type="template" id="content-results">
   {{#pages}}
     <li class="list-group-item">
-      <a href="http://" + matrix.settings.domain + "/{{ url }}" target="_blank">{{ title }}</a>
-      <em>
-      <div class="visitor-types mobile">
-        <i class="icon mobile icon-mobile-phone"></i> {{ numberFormat visits.mobile }}
-      </div>
-      <div class="visitor-types desktop">
-        <i class="icon desktop icon-desktop"></i> {{ numberFormat visits.desktop }}
-      </div>
-      </em>
+      <h4 class="list-group-item-heading">
+        <a href="http://{{ matrix.settings.domain }}/{{ url }}" target="_blank">{{ title }}</a>
+      </h4>
+      <p class="list-group-item-text">
+        <span class="visitor-types mobile">
+          <span class="fa fa-mobile"></span> {{ numberFormat visits.mobile }}
+        </span>
+        <span class="visitor-types desktop">
+          <span class="fa fa-desktop"></span> {{ numberFormat visits.desktop }}
+        </span>
+      </p>
     </li>
   {{/pages}}
 </script>
