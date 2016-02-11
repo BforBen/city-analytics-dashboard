@@ -30,6 +30,7 @@
     <meta name="msapplication-config" content="//cdn.guildford.gov.uk/assets/browserconfig.xml">
     <meta name="theme-color" content="#009688">
     <meta name="robots" content="noindex,follow">
+    <style>.page-header { margin-top: 40px; }</style>
 </head>
 <body>
 <header role="banner" class="navbar navbar-gbc">
@@ -48,24 +49,22 @@
             <div class="small-box traffic">
                 <div class="graph box-in">
                   <div id="traffic-count-graph" class="box-inner"></div>
-                  <div class="text-muted">visitors over the last 48 hours (30 minute interval)</div>
+                  <div class="text-muted text-right">visitors over the last 48 hours (30 minute interval)</div>
                 </div>
             </div>
         </div>
-        <div class="col-xs-1">
-          <span id="traffic" class="count">
-              <div class="visitor-count" id="mobile-count">
-                <span class="text-feature" id="traffic-count-mobile">&nbsp;</span>
-                <span class="icon-mobile-phone"></span>
-                mobile
-              </div>
-              <div class="visitor-count" id="desktop-count">
-                <span class="text-feature" id="traffic-count">&nbsp;</span>
-                <span class="icon-desktop"></span>
-                desktop
-              </div>
-              <span>visitors online</span>
-          </span>
+        <div class="col-xs-1" id="traffic">
+            <h5>Visitors online</span>
+            <div class="visitor-count" id="mobile-count">
+              <span class="lrg-number" id="traffic-count-mobile">&nbsp;</span>
+              <span class="fa fa-mobile"></span>
+              Mobile
+            </div>
+            <div class="visitor-count" id="desktop-count">
+              <span class="lrg-number" id="traffic-count">&nbsp;</span>
+              <span class="fa fa-desktop"></span>
+              Desktop
+            </div>
         </div>
     </div>
     <div class="row">
