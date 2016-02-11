@@ -30,7 +30,12 @@
     <meta name="msapplication-config" content="//cdn.guildford.gov.uk/assets/browserconfig.xml">
     <meta name="theme-color" content="#009688">
     <meta name="robots" content="noindex,follow">
-    <style>.page-header { margin-top: 40px; }</style>
+    <style>
+      .page-header { margin-top: 40px; }
+      #mobile-count { background: #B26E00; }
+      #desktop-count { background: #265c8d; }
+      .visitor-count { color: #fff; }
+    </style>
 </head>
 <body>
 <header role="banner" class="navbar navbar-gbc">
@@ -45,7 +50,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-9 col-xs-offset-2">
+        <div class="col-xs-9 col-xs-offset-1">
             <div class="small-box traffic">
                 <div class="graph box-in">
                   <div id="traffic-count-graph" class="box-inner"></div>
@@ -54,17 +59,15 @@
             </div>
         </div>
         <div class="col-xs-1" id="traffic">
-            <h5>Visitors online</span>
             <div class="visitor-count" id="mobile-count">
               <span class="lrg-number" id="traffic-count-mobile">&nbsp;</span>
-              <span class="fa fa-mobile"></span>
-              Mobile
+              <div><span class="fa fa-mobile"></span> mobile</div>
             </div>
             <div class="visitor-count" id="desktop-count">
               <span class="lrg-number" id="traffic-count">&nbsp;</span>
-              <span class="fa fa-desktop"></span>
-              Desktop
+              <div><span class="fa fa-desktop"></span> desktop</div>
             </div>
+            <h5>visitors online</h5>
         </div>
     </div>
     <div class="row">
