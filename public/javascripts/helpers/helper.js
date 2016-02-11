@@ -42,7 +42,7 @@ window.helper = {
     var results = this.deviceDateResult(dates);
     var resultLength = result.length;
     var timeFormatGoogle = timeFormat.format('%Y%m%d%H%M%Z');
-    var timeZone = "-0700"
+    var timeZone = "+0000"
     for(var j=0;j<resultLength;j++) {
       var currentResult = result[j];
       var hour = currentResult[hourColumn],
@@ -60,10 +60,11 @@ window.helper = {
     return results;
   },
   deviceResult: function(resultsLength) {
-    var results = {"desktop": new Array(resultsLength), "mobile": new Array(resultsLength)};
+    var results = {"desktop": new Array(resultsLength), "mobile": new Array(resultsLength), "tablet": new Array(resultsLength)};
     for(var i=0;i<resultsLength;i++) {
       results.desktop[i] = 0;
       results.mobile[i] = 0;
+      results.tablet[i] = 0;
     }
     return results;
   },
