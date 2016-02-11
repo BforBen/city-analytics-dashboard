@@ -34,6 +34,7 @@
       .page-header { margin-top: 40px; }
       .mobile { background: #B26E00; color: #fff; }
       .desktop { background: #265c8d; color: #fff; }
+      .desktop { background: #333; color: #fff; }
       .visitor-count { text-align: center; padding-bottom: 1em; }
       .visitor-types { padding: 0 0.5em; margin-top: 1em; }
       .list-contents { padding-left: 0; }
@@ -63,7 +64,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-9 col-md-offset-1">
+        <div class="col-md-10">
             <div class="small-box traffic">
                 <div class="graph box-in">
                   <div id="traffic-count-graph" class="box-inner"></div>
@@ -71,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-1" id="traffic">
+        <div class="col-md-2" id="traffic">
             <div class="row">
                 <div class="col-xs-6">
                     <div class="visitor-count mobile" id="mobile-count">
@@ -84,13 +85,13 @@
                     </div>
                 </div>
                 <div class="col-xs-6">
-                    <div class="visitor-count tablet hide" id="tablet-count">
+                    <div class="visitor-count tablet" id="tablet-count">
                       <span class="lrg-number" id="traffic-count-tablet">&nbsp;</span>
                       <div><span class="fa fa-tablet"></span> tablet</div>
                     </div>
                 </div>
-                <h4>visitors online</h4>
             </div>
+            <h4 class="text-center">visitors online</h4>
         </div>
     </div>
     <div class="row">
