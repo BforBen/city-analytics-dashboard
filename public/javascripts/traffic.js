@@ -73,6 +73,7 @@
     init: function(){
       traffic.el = document.getElementById('traffic-count');
       traffic.elMob = document.getElementById('traffic-count-mobile');
+      traffic.elTab = document.getElementById('traffic-count-tablet');
       traffic.graphEl = document.getElementById('traffic-count-graph');
       traffic.counts.length = traffic.points;
 

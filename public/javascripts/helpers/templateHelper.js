@@ -1,8 +1,9 @@
 window.templateHelper = {
   templates: [],
   deviceClasses: {
-    'mobile': 'icon-mobile-phone',
-    'desktop': 'icon-desktop'
+    'mobile': 'fa-mobile',
+    'tablet': 'fa-tablet',
+    'desktop': 'fa-desktop'
   },
   deviceCategoryClass: function(deviceCategory) {
     return this.deviceClasses[deviceCategory];
