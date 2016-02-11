@@ -52,10 +52,10 @@
             data: dataArray,
             element: 'traffic-count-graph',
             xkey: 'date',
-            ykeys: ['desktop', 'mobile'],
-            labels: ['Desktop', 'Mobile'],
+            ykeys: ['desktop', 'mobile', 'tablet'],
+            labels: ['Desktop', 'Mobile', 'Tablet'],
             stacked: true,
-            barColors: ["#265C8D", "#B26E00"],
+            barColors: ["#265C8D", "#B26E00", "#333"],
             hideHover: 'always',
             xLabelFormat: function(data){
               return "";
