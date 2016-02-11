@@ -34,7 +34,7 @@
       .page-header { margin-top: 40px; }
       #mobile-count { background: #B26E00; }
       #desktop-count { background: #265c8d; }
-      .visitor-count { color: #fff; }
+      .visitor-count { color: #fff; text-align: center; padding-bottom: 1em; }
     </style>
 </head>
 <body>
@@ -67,7 +67,7 @@
               <span class="lrg-number" id="traffic-count">&nbsp;</span>
               <div><span class="fa fa-desktop"></span> desktop</div>
             </div>
-            <h5>visitors online</h5>
+            <h4>visitors online</h4>
         </div>
     </div>
     <div class="row">
@@ -75,7 +75,7 @@
             <h2 class="page-header">Live search</h2>
             <div class="box search-terms">
                 <div class="box-inner">
-                    <ul id="search-terms"></ul>
+                    <ul id="search-terms" class="list-contents list-contents-bottom-divider"></ul>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
             <h2 class="page-header">Active pages</h2>
             <div class="box searches">
                 <div class="box-inner">
-                    <ul id="search"></ul>
+                    <ul id="search" class="list-contents list-contents-bottom-divider"></ul>
                 </div>
             </div>
         </div>
@@ -91,7 +91,7 @@
             <h2 class="page-header">Most popular pages</h2>
             <div class="box popular content">
                 <div class="box-inner">
-                    <ul id="content"></ul>
+                    <ul id="content" class="list-contents list-contents-bottom-divider"></ul>
                 </div>
             </div>
         </div>
@@ -143,7 +143,7 @@
 
 <script type="template" id="content-results">
   {{#pages}}
-    <li>
+    <li class="list-group-item">
       <a href="http://" + matrix.settings.domain + "/{{ url }}" target="_blank">{{ title }}</a>
       <em>
       <div class="visitor-types mobile">
@@ -159,7 +159,7 @@
 
 <script type="template" id="search-result-items">
   {{#pages}}
-  <li>
+  <li class="list-group-item">
     <div class="device-type {{deviceCategory}}"></div>
     <div class="link">
       <a href="http://" + matrix.settings.domain + "/{{ url }}" target="_blank">{{ term }}</a>
@@ -168,7 +168,7 @@
   {{/pages}}
 </script>
 <script type="template" id="search-result-item">
-  <li>
+  <li class="list-group-item">
     <div class="device-type {{deviceCategory}}"></div>
     <div>
       <a href="http://" + matrix.settings.domain + "/{{ url }}" target="_blank">{{ term }}</a>
@@ -178,7 +178,7 @@
 
 <script type="template" id="landing-pages-items">
   {{#each pages}}
-  <li>
+  <li class="list-group-item">
     <div class="device-type {{deviceCategory}}"></div>
     <div class="link">
       {{#has_url}}<a href="http://" + matrix.settings.domain + "/{{ url }}" target="_blank">{{/has_url}}
