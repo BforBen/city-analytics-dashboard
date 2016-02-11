@@ -40,8 +40,10 @@
         var users = parseRows(data.rows);
         var activeUsers = parseInt(users['DESKTOP'], 10) | 0;
         var activeUsersMobile = parseInt(users['MOBILE'], 10) | 0;
+        var activeUsersTablet = parseInt(users['TABLET'], 10) | 0;
         traffic.el.innerHTML = activeUsers;
         traffic.elMob.innerHTML = activeUsersMobile;
+        traffic.elTab.innerHTML = activeUsersTablet;
 
         var dataArray = helper.arrayFromObject(traffic.counts);
         

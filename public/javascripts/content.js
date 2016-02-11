@@ -18,7 +18,7 @@
     },
     reorderData: function() {
       var overallVisits = function(visits) {
-        return (parseInt(visits.mobile) + parseInt(visits.desktop));
+        return (parseInt(visits.mobile) + parseInt(visits.desktop) + parseInt(visits.tablet));
       }
       var visitSort = function(a,b) {
         if(overallVisits(a.visits) < overallVisits(b.visits)) return 1;
@@ -39,7 +39,7 @@
         if(oldRow = window.dataHelper.findWithUrl(content.pages, url)) {
           oldRow.visits[device] += visits;
         }else {
-          visitsDevice = { desktop: 0, mobile: 0 };
+          visitsDevice = { desktop: 0, mobile: 0, tablet: 0 };
           visitsDevice[device] += visits;
           content.pages.push({
             title: data.rows[i][titleColumn],
