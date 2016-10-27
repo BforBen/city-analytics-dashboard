@@ -21,9 +21,10 @@ get '/' do
   html = File.read(File.join('public', 'index.html'))
   html.sub!('$PROFILE_ID', JSON.dump(ENV['GA_VIEW_ID']))
   html.sub!('$DOMAIN_URL', JSON.dump(ENV['GA_WEBSITE_URL']))
-  html.sub!('$THEME_COLOUR', JSON.dump(ENV['THEME_COLOUR']))
-  html.sub!('$ORGANISATION_NAME', JSON.dump(ENV['ORGANISATION_NAME']))
-  html.sub!('$APP_TITLE', JSON.dump(ENV['APP_TITLE']))
+  html.sub!('$DOMAIN_URL_RAW', ENV['GA_WEBSITE_URL'])
+  html.sub!('$THEME_COLOUR', ENV['THEME_COLOUR'])
+  html.sub!('$ORGANISATION_NAME', ENV['ORGANISATION_NAME'])
+  html.sub!('$APP_TITLE', ENV['APP_TITLE'])
   return html
 end
 
