@@ -20,7 +20,7 @@
       .visitor-count { text-align: center; padding-bottom: 1em; }
       .visitor-types { padding: 0 0.5em; margin-top: 1em; }
       .list-contents { padding-left: 0; }
-      .navbar-gbc { background-color: $THEME_COLOUR }
+      .navbar-gbc { background-color: $THEME_COLOUR; }
     </style>
 </head>
 <body>
@@ -152,7 +152,7 @@
   {{#pages}}
     <li class="list-group-item">
       <h4 class="list-group-item-heading">
-        <a href="$DOMAIN_URL{{ url }}" target="_blank">{{ title }}</a>
+        <a href="$DOMAIN_URL_RAW{{ url }}" target="_blank">{{ title }}</a>
       </h4>
       <p class="list-group-item-text">
         <span class="visitor-types mobile">
@@ -174,7 +174,7 @@
   <li class="list-group-item">
     <div class="device-type {{deviceCategory}}"></div>
     <h4 class="list-group-item-heading">
-      <a href="$DOMAIN_URL{{ url }}" target="_blank">{{ term }}</a>
+      <a href="$DOMAIN_URL_RAW{{ url }}" target="_blank">{{ term }}</a>
     </h4>
   </li>
   {{/pages}}
@@ -183,7 +183,7 @@
   <li class="list-group-item">
     <div class="device-type {{deviceCategory}}"></div>
     <h4 class="list-group-item-heading">
-      <a href="$DOMAIN_URL{{ url }}" target="_blank">{{ term }}</a>
+      <a href="$DOMAIN_URL_RAW{{ url }}" target="_blank">{{ term }}</a>
     </h4>
   </li>
 </script>
@@ -193,7 +193,7 @@
   <li class="list-group-item">
     <div class="device-type {{deviceCategory}}"></div>
     <h4 class="list-group-item-heading">
-      {{#has_url}}<a href="$DOMAIN_URL{{ url }}" target="_blank">{{/has_url}}
+      {{#has_url}}<a href="$DOMAIN_URL_RAW{{ url }}" target="_blank">{{/has_url}}
       {{ term }}
       {{#has_url}}</a>{{/has_url}}
     </h4>
