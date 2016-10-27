@@ -25,6 +25,7 @@ get '/' do
   html.sub!('$THEME_COLOUR', ENV['THEME_COLOUR'])
   html.sub!('$ORGANISATION_NAME', ENV['ORGANISATION_NAME'])
   html.sub!('$APP_TITLE', ENV['APP_TITLE'])
+  html.sub!('$SHORTCUT_ICON', ENV['SHORTCUT_ICON'])
   return html
 end
 
