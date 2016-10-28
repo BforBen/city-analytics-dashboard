@@ -19,7 +19,8 @@ end
 
 get '/' do
   html = File.read(File.join('public', 'index.html'))
-  html.gsub!('$PROFILE_ID', JSON.dump(ENV['GA_VIEW_ID']))
+  html.sub!('$PROFILE_ID', JSON.dump(ENV['GA_VIEW_ID']))
+  html.sub!('$TITLE_FILTER', JSON.dump(ENV['TITLE_FILTER']))
   html.gsub!('$DOMAIN_URL_RAW', ENV['GA_WEBSITE_URL'])
   html.gsub!('$DOMAIN_URL', JSON.dump(ENV['GA_WEBSITE_URL']))
   html.gsub!('$THEME_COLOUR', ENV['THEME_COLOUR'])
