@@ -61,7 +61,7 @@
       var i, _i, term, url, source, minutesAgo, deviceCategory,
       termColumn = 1, urlColumn = 0,
       minutesAgoColumn = 2, deviceCategoryColumn = 3, countColumn = 4, maxMinutes = 2;
-
+console.log(data);
       for(i=0,_i=data.rows.length; i<_i; i++){
         term = data.rows[i][termColumn];
         url = data.rows[i][urlColumn];
