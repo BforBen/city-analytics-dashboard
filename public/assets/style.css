@@ -9,7 +9,7 @@ body
     border: 0;
     border-radius: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
-    background-color: $THEME_COLOUR;
+    background-color: #212121;
     margin-top: 0;
 }
 .not-live .navbar-gbc {
@@ -320,3 +320,11 @@ font-size: 19px;
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
+
+.page-header { margin-top: 40px; }
+.mobile { background: #B26E00; color: #fff; }
+.desktop { background: #265c8d; color: #fff; }
+.tablet { background: #333; color: #fff; }
+.visitor-count { text-align: center; padding-bottom: 1em; }
+.visitor-types { padding: 0 0.5em; margin-top: 1em; }
+.list-contents { padding-left: 0; }
