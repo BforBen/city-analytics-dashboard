@@ -29,6 +29,13 @@ get '/' do
   return html
 end
 
+get '/assets/style.css' do
+  css = File.read(File.join('assets', 'style.css'))
+  css.sub!('$THEME_COLOUR', ENV['THEME_COLOUR'])
+  return css
+end
+
+
 get '/realtime' do
   cache_control :public, :max_age => 20
   query = { :access_token => get_token }.merge(params)
