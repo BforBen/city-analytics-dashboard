@@ -27,7 +27,7 @@
       window.templateHelper.registerHelpers();
       matrix.traffic.init();
       matrix.landing.init();
-      matrix.search.init();
+      //matrix.search.init();
       matrix.content.init();
     },
     positionFixups: function(column) {
