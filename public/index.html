@@ -72,7 +72,7 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <h2 class="page-header">Live search</h2>
+            <h2 class="page-header">Live search <span class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="Real time search"></span></h2>
             <div class="box search-terms">
                 <div class="box-inner">
                     <ul id="search-terms" class="list-contents list-contents-bottom-divider"></ul>
@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <h2 class="page-header">Active pages</h2>
+            <h2 class="page-header">Active pages <span class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="Pages as they are being viewed"></span></h2>
             <div class="box searches">
                 <div class="box-inner">
                     <ul id="search" class="list-contents list-contents-bottom-divider"></ul>
@@ -88,7 +88,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <h2 class="page-header">Most popular pages</h2>
+            <h2 class="page-header">Most popular pages <span class="fa fa-info-circle" aria-hidden="true" data-toggle="tooltip" title="Most popular pages since yesterday"></span></h2>
             <div class="box popular content">
                 <div class="box-inner">
                     <ul id="content" class="list-contents list-contents-bottom-divider"></ul>
@@ -97,7 +97,6 @@
         </div>
     </div>
 </div>
-
 <script src="javascripts/vendor/xhr.min.js"></script>
 <script src="javascripts/vendor/time.min.js"></script>
 <script src="javascripts/vendor/timeFormat.min.js"></script>
@@ -107,7 +106,6 @@
 <script src="https://cdn.jsdelivr.net/handlebarsjs/3.0.3/handlebars.min.js" integrity="sha256-lsnwFhrNhbBmHfkBv9qFeiUVHti2+DmL0F1K5pysQsM=" crossorigin="anonymous"></script>
 <script src="javascripts/vendor/pretty.js"></script>
 <script src="javascripts/vendor/bezier.js"></script>
-
 <script src="javascripts/helpers/dataHelper.js"></script>
 <script src="javascripts/helpers/templateHelper.js"></script>
 <script src="javascripts/helpers/helper.js"></script>
@@ -116,9 +114,7 @@
 <script src="javascripts/search.js"></script>
 <script src="javascripts/traffic.js"></script>
 <script src="javascripts/content.js"></script>
-
 <script src="javascripts/manager.js"></script>
-
 <script src="https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <script>
@@ -132,6 +128,8 @@
   };
 
   addEvent("load", window, matrix.manager.init);
+    
+  jQuery(function ($) { $('[data-toggle="tooltip"]').tooltip(); });
 </script>
 
 <script type="template" id="select-options">
