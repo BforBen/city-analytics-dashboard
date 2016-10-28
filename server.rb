@@ -20,21 +20,14 @@ end
 get '/' do
   html = File.read(File.join('public', 'index.html'))
   html.gsub!('$PROFILE_ID', JSON.dump(ENV['GA_VIEW_ID']))
-  html.gsub!('$DOMAIN_URL', JSON.dump(ENV['GA_WEBSITE_URL']))
   html.gsub!('$DOMAIN_URL_RAW', ENV['GA_WEBSITE_URL'])
+  html.gsub!('$DOMAIN_URL', JSON.dump(ENV['GA_WEBSITE_URL']))
   html.gsub!('$THEME_COLOUR', ENV['THEME_COLOUR'])
   html.gsub!('$ORGANISATION_NAME', ENV['ORGANISATION_NAME'])
   html.gsub!('$APP_TITLE', ENV['APP_TITLE'])
   html.gsub!('$SHORTCUT_ICON', ENV['SHORTCUT_ICON'])
   return html
 end
-
-get '/assets/style.css' do
-  css = File.read(File.join('assets', 'style.css'))
-  css.gsub!('$THEME_COLOUR', ENV['THEME_COLOUR'])
-  return css
-end
-
 
 get '/realtime' do
   cache_control :public, :max_age => 20
