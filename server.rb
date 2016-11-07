@@ -25,7 +25,6 @@ get '/' do
   html.gsub!('$DOMAIN_URL', JSON.dump(ENV['GA_WEBSITE_URL']))
   html.gsub!('$THEME_COLOUR', ENV['THEME_COLOUR'])
   html.gsub!('$ORGANISATION_NAME', ENV['ORGANISATION_NAME'])
-  html.gsub!('$APP_TITLE', ENV['APP_TITLE'])
   html.gsub!('$SHORTCUT_ICON', ENV['SHORTCUT_ICON'])
   return html
 end
